@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font Faces ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* COMSATS Green Theme */
+    --background:     0.97 0.004 145;
+    --foreground:     0.16 0.025 155;
+
+    --card:           1 0 0;
+    --card-foreground: 0.16 0.025 155;
+
+    --popover:        1 0 0;
+    --popover-foreground: 0.16 0.025 155;
+
+    /* Primary: COMSATS Emerald Green */
+    --primary:        0.46 0.165 152;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: Light sage */
+    --secondary:      0.92 0.02 145;
+    --secondary-foreground: 0.25 0.05 152;
+
+    --muted:          0.93 0.012 145;
+    --muted-foreground: 0.52 0.025 155;
+
+    /* Accent: Vibrant forest green */
+    --accent:         0.89 0.04 145;
+    --accent-foreground: 0.25 0.05 152;
+
+    --destructive:    0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* success */
+    --success:        0.55 0.17 152;
+    --success-foreground: 1 0 0;
+
+    /* warning */
+    --warning:        0.78 0.185 75;
+    --warning-foreground: 0.15 0.03 75;
+
+    --border:         0.86 0.022 145;
+    --input:          0.86 0.022 145;
+    --ring:           0.46 0.165 152;
+
+    --chart-1: 0.46 0.165 152;
+    --chart-2: 0.62 0.145 152;
+    --chart-3: 0.78 0.185 75;
+    --chart-4: 0.57 0.245 27.325;
+    --chart-5: 0.38 0.09 152;
+
+    --sidebar: 0.15 0.06 152;
+    --sidebar-foreground: 0.95 0.01 152;
+    --sidebar-primary: 0.6 0.17 152;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.2 0.06 152;
+    --sidebar-accent-foreground: 0.95 0.01 152;
+    --sidebar-border: 0.22 0.06 152;
+    --sidebar-ring: 0.46 0.165 152;
+  }
+
+  .dark {
+    --background:     0.13 0.03 155;
+    --foreground:     0.95 0.01 145;
+
+    --card:           0.18 0.035 155;
+    --card-foreground: 0.95 0.01 145;
+
+    --popover:        0.18 0.035 155;
+    --popover-foreground: 0.95 0.01 145;
+
+    --primary:        0.6 0.17 152;
+    --primary-foreground: 0.1 0.03 155;
+
+    --secondary:      0.22 0.04 155;
+    --secondary-foreground: 0.9 0.015 145;
+
+    --muted:          0.22 0.04 155;
+    --muted-foreground: 0.65 0.03 145;
+
+    --accent:         0.25 0.05 155;
+    --accent-foreground: 0.9 0.015 145;
+
+    --destructive:    0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+
+    --success:        0.55 0.17 152;
+    --success-foreground: 1 0 0;
+
+    --warning:        0.78 0.185 75;
+    --warning-foreground: 0.15 0.03 75;
+
+    --border:         0.25 0.04 155;
+    --input:          0.25 0.04 155;
+    --ring:           0.6 0.17 152;
+
+    --chart-1: 0.6 0.17 152;
+    --chart-2: 0.72 0.145 152;
+    --chart-3: 0.78 0.185 75;
+    --chart-4: 0.7 0.245 27.325;
+    --chart-5: 0.5 0.12 152;
+
+    --sidebar: 0.1 0.025 155;
+    --sidebar-foreground: 0.95 0.01 152;
+    --sidebar-primary: 0.6 0.17 152;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.18 0.04 155;
+    --sidebar-accent-foreground: 0.95 0.01 152;
+    --sidebar-border: 0.22 0.04 155;
+    --sidebar-ring: 0.6 0.17 152;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* ─── Custom utilities ────────────────────────────────────────────── */
+@layer utilities {
+  .text-success { color: oklch(var(--success)); }
+  .bg-success { background-color: oklch(var(--success)); }
+  .text-success-foreground { color: oklch(var(--success-foreground)); }
+  .text-warning { color: oklch(var(--warning)); }
+  .bg-warning { background-color: oklch(var(--warning)); }
+  .text-warning-foreground { color: oklch(var(--warning-foreground)); }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, oklch(0.18 0.07 155), oklch(0.28 0.1 152), oklch(0.35 0.13 148));
+  }
+
+  .gradient-card {
+    background: linear-gradient(145deg, oklch(1 0 0), oklch(0.97 0.008 145));
+  }
+
+  .glass {
+    background: oklch(1 0 0 / 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(1 0 0 / 0.15);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
